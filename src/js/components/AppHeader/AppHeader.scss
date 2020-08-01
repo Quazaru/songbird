@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import '../../../assets/css/variables.scss';
+header {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo{
+  font-size: 50px;
+  font-family: 'Indie Flower', cursive;
+  span {
+    color: $main-breeze;
+  }
+}
+.important-counter {
+  padding-left: 5px;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 550px) {
+  header {
+    justify-content: center;
+  }
+  .logo {
+    margin-right: 40px;
+  }
+}
