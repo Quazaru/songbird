@@ -60,11 +60,20 @@ margin: 0 auto;
     #rhap_current-time, .rhap_time.rhap_total-time {
       color:  #fff;
     }
+    .rhap_container {
+      width: 100%;
+      &:focus {
+        outline: none !important;
+      }
+      
+    }
     .rhap_volume-controls {
       display: block;
+      outline: none;
     }
      .rhap_volume-container {
-      width: 80%;
+      width: 100%;
+      outline: none;
     }
     .rhap_button-clear {
       svg {
@@ -76,7 +85,9 @@ margin: 0 auto;
     .rhap_progress-indicator , .rhap_volume-indicator {
       background-color: $sub-breeze;
     }
-
+    .rhap_forward-button, .rhap_rewind-button {
+      display: none;
+    }
   }
 }
 
@@ -92,5 +103,11 @@ margin: 0 auto;
     &__name {
       width: 100%;
     }
+    &__body {
+      width: 100%;
+    }
+  }
+  .rhap_container {
+    padding: 0;
   }
 }

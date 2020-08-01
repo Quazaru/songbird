@@ -4,14 +4,14 @@
   color: #fff;
   font-size: 25px;
   width: 100%;
-  background-color: darken($color: $main-green, $amount: 30%);
+  background-color: darken($color: $main-breeze, $amount: 20%);
   border: none;
   padding: 10px;
   margin-top: 20px;
   border-radius: 5px;
-  transition: all .2s ease-in-out;
+  transition: all .1s ease-in-out;
   &:hover {
-    transition: all .2s ease-in-out;
-    background-color: darken($color: $main-green, $amount: 20%);
+    transition: all .1s ease-in-out;
+    background-color: darken($color: $main-breeze, $amount: 10%);
   }
 }
