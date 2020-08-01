@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400&display=swap');
 @import '../../../assets/css/variables.scss';
+
+
 body {
   font-size: 16px;
   font-family: 'Raleway', sans-serif;
@@ -49,7 +51,32 @@ margin: 0 auto;
     }
   }
   &__audio {
+    display: flex;
     width: 100%;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    color: #fff;
+    #rhap_current-time, .rhap_time.rhap_total-time {
+      color:  #fff;
+    }
+    .rhap_volume-controls {
+      display: block;
+    }
+     .rhap_volume-container {
+      width: 80%;
+    }
+    .rhap_button-clear {
+      svg {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+    .rhap_progress-indicator , .rhap_volume-indicator {
+      background-color: $sub-breeze;
+    }
+
   }
 }
 

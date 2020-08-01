@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 import './BirdPerview.scss';
+
 
 const BirdPerview = (props) => {
   const { bird, hidden } = props;
@@ -17,7 +20,17 @@ const BirdPerview = (props) => {
       </div>
       <div className="bird-card__body">
         <p className="bird-card__name">{name}</p>
-        <div className="bird-card__player">f</div>
+        <AudioPlayer
+          className="bird-card__audio"
+          layout="horizontal-reverse"
+          src={audio}
+          customControlsSection={
+            [
+              RHAP_UI.MAIN_CONTROLS,
+              RHAP_UI.VOLUME_CONTROLS,
+            ]
+          }
+        />
       </div>
     </div>
   );

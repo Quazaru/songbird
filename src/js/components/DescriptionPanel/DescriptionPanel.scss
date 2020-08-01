@@ -1,0 +1,49 @@
+@import '../../../assets/css/variables.scss';
+.description-panel {
+  width: calc(50% - 5px);
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 10px;
+  min-height: $sub-card-height;
+}
+
+
+.bird-card.description-panel {
+  .bird-card__img {
+    display: inline-block;
+    width: 30%;
+    
+    margin-right: 20px;
+    img {
+      width: 100%;
+      border-radius: 10px;
+      height: 100px;
+      overflow: hidden;
+    }
+  }
+  .bird-card__subtitle {
+    color: rgba(255, 255, 255, 0.671);
+    font-size: 14px;
+  }
+  .bird-card__body {
+    margin-bottom: 20px;
+  }
+  .bird-card__player {
+    margin-bottom: 10px;
+  }
+  .bird-card__description {
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .description-panel {
+    margin: 0;
+    margin-top: 20px;
+    width: auto;
+    display: block;
+
+  }
+}

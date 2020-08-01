@@ -43,12 +43,13 @@
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "babel-cli": "^6.26.0",
+    "normalize.css": "^8.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "pug": "^3.0.0",
     "pug-loader": "^2.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "normalize.css": "^8.0.1"
+    "react-h5-audio-player": "^3.2.0"
   },
   "browserslist": "> 0.25%, not dead",
   "keywords": []
