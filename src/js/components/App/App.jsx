@@ -30,7 +30,7 @@ export default class App extends React.Component {
     this.setState(({ selectedBird }) => {
       const newActiveBird = id - 1;
       return ({ selectedBird: newActiveBird });
-    })
+    });
     if (id - 1 === this.state.hiddenBird) {
       console.log(id - 1, this.state.hiddenBird);
       this.setState({ win: true });
@@ -43,10 +43,10 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { currentLevel, hiddenBird, win, currentScore, newActiveBird } = this.state;
+    const { currentLevel, hiddenBird, win, currentScore, selectedBird } = this.state;
     const levelBirds = birdsData[currentLevel];
     const currentBird = levelBirds[hiddenBird];
-    const activeBird = birdsData[newActiveBird];
+    const activeBird = levelBirds[selectedBird];
     return (
       <div className="container">
         <AppHeader
@@ -59,7 +59,7 @@ export default class App extends React.Component {
           onClick={(id) => this.chooseBird(id)}
           onWin={() => { this.onWin(); }}
         />
-        <DescriptionPanel bird={currentBird} />
+        <DescriptionPanel bird={activeBird} />
         <NextLevelBtn />
       </div>
     );
