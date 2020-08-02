@@ -1,13 +1,13 @@
 @import '../../../assets/css/variables.scss';
 
-.bird-card.bird-choice {
+.field-card.field-choice {
   width: calc(50% - 90px);
   display: inline-block;
   margin-top: 10px;
   height: $sub-card-height;
 }
 
-.bird-choice {
+.field-choice {
   ul {
     padding: 0;
     list-style: none;
@@ -78,7 +78,7 @@
 }
 
 @media screen and (max-width: 700px) {
-  .bird-card.bird-choice {
+  .field-card.field-choice {
     width: auto;
     display: block;
 

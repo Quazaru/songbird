@@ -1,5 +1,5 @@
 import React from 'react';
-import './NextLevelBtn.scss'
+import './NextLevelBtn.scss';
 
 const NextLevelBtn = (props) => {
   return (

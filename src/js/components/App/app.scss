@@ -13,7 +13,7 @@ body {
 max-width: 1140px;
 margin: 0 auto; 
 }
-.bird-card {
+.field-card {
   background-color: $sub-black;
   border-radius: 5px;
   padding: 20px;
@@ -92,7 +92,7 @@ margin: 0 auto;
 }
 
 @media screen and (max-width: 550px) {
-  .bird-card {
+  .field-card {
     &__img {
       display: block;
       width: 100%;

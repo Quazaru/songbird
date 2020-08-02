@@ -2,26 +2,25 @@
 import React from 'react';
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import './BirdPerview.scss';
+import './Preview.scss';
 
-
-const BirdPerview = (props) => {
-  const { bird, hidden } = props;
-  let { image, name, audio } = bird;
+const Perview = (props) => {
+  const { data, hidden } = props;
+  let { image, name, audio } = data;
 
   if (hidden) {
     image = '../../../assets/img/hidden.jpg';
     name = ' ~ | ? | ~ ';
   }
   return (
-    <div className="bird-card">
-      <div className="bird-card__img">
+    <div className="field-card">
+      <div className="field-card__img">
         <img src={image} alt={name} />
       </div>
-      <div className="bird-card__body">
-        <p className="bird-card__name">{name}</p>
+      <div className="field-card__body">
+        <p className="field-card__name">{name}</p>
         <AudioPlayer
-          className="bird-card__audio"
+          className="field-card__audio"
           layout="horizontal-reverse"
           src={audio}
           customControlsSection={
@@ -36,4 +35,4 @@ const BirdPerview = (props) => {
   );
 };
 
-export default BirdPerview;
+export default Perview;

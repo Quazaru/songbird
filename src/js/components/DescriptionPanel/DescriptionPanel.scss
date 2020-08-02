@@ -1,6 +1,6 @@
 @import '../../../assets/css/variables.scss';
 .description-panel {
-  width: calc(50% - 5px);
+  width: calc(50% );
   display: inline-block;
   vertical-align: top;
   margin-top: 10px;
@@ -9,8 +9,8 @@
 }
 
 
-.bird-card.description-panel {
-  .bird-card__img {
+.field-card.description-panel {
+  .field-card__img {
     display: inline-block;
     width: 30%;
     
@@ -22,17 +22,17 @@
       overflow: hidden;
     }
   }
-  .bird-card__subtitle {
+  .field-card__subtitle {
     color: rgba(255, 255, 255, 0.671);
     font-size: 14px;
   }
-  .bird-card__body {
+  .field-card__body {
     margin-bottom: 20px;
   }
-  .bird-card__player {
+  .field-card__player {
     margin-bottom: 10px;
   }
-  .bird-card__description {
+  .field-card__description {
     margin-top: 10px;
     line-height: 1.5;
   }

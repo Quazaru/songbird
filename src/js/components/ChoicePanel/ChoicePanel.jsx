@@ -15,7 +15,7 @@ class ChoicePanel extends React.Component {
     const elements = array.map((item) => (
       <li
           key={item.id} 
-          className="bird-choice__item"
+          className="field-choice__item"
           onClick={() => this.props.onClick(item.id)}>
         <button type="button">
           {item.name}
@@ -26,11 +26,11 @@ class ChoicePanel extends React.Component {
   }
 
   render() {
-    const { birdList, answerBird } = this.props;
+    const { fieldsList } = this.props;
     return (
-      <div className="bird-card bird-choice">
+      <div className="field-card field-choice">
         <ul>
-          {this.answersRender(birdList)}
+          {this.answersRender(fieldsList)}
         </ul>
       </div>
     );
