@@ -5,6 +5,9 @@ import './DescriptionPanel.scss';
 
 const DescriptionPanel = (props) => {
   const { bird } = props;
+  if (!bird) {
+
+  }
   const {
     image, name, species, description, audio,
   } = bird;

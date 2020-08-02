@@ -15,21 +15,51 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       currentLevel: 0,
-
+      hiddenBird: Math.floor(Math.random() * 5),
+      selectedBird: false,
+      win: false,
+      currentScore: 5,
     };
   }
 
+  onWin() {
+    this.setState({ win: true });
+  }
+
+  chooseBird(id) {
+    this.setState(({ selectedBird }) => {
+      const newActiveBird = id - 1;
+      return ({ selectedBird: newActiveBird });
+    })
+    if (id - 1 === this.state.hiddenBird) {
+      console.log(id - 1, this.state.hiddenBird);
+      this.setState({ win: true });
+    } else {
+      this.setState(({ currentScore }) => {
+        const newScore = currentScore - 1;
+        return { currentScore: newScore };
+      });
+    }
+  }
+
   render() {
-    const { currentLevel } = this.state;
+    const { currentLevel, hiddenBird, win, currentScore, newActiveBird } = this.state;
+    const levelBirds = birdsData[currentLevel];
+    const currentBird = levelBirds[hiddenBird];
+    const activeBird = birdsData[newActiveBird];
     return (
       <div className="container">
         <AppHeader
-          score="3"
+          score={currentScore}
         />
         <LevelMap levelNumber={0} />
-        <BirdPerview hidden={false} bird={birdsData[0][0]} />
-        <ChoicePanel birdList={birdsData[currentLevel]} />
-        <DescriptionPanel bird={birdsData[0][0]} />
+        <BirdPerview hidden={!win} bird={currentBird} />
+        <ChoicePanel
+          birdList={levelBirds}
+          onClick={(id) => this.chooseBird(id)}
+          onWin={() => { this.onWin(); }}
+        />
+        <DescriptionPanel bird={currentBird} />
         <NextLevelBtn />
       </div>
     );

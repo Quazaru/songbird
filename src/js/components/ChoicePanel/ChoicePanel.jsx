@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './ChoicePanel.scss';
@@ -11,15 +12,16 @@ class ChoicePanel extends React.Component {
   }
 
   answersRender(array) {
-    const elements = array.map((item) => {
-      return (
-        <li key={item.id} className='bird-choice__item'>
-          <button type='button'>
-            {item.name}
-          </button>
-        </li>
-      )
-    })
+    const elements = array.map((item) => (
+      <li
+          key={item.id} 
+          className="bird-choice__item"
+          onClick={() => this.props.onClick(item.id)}>
+        <button type="button">
+          {item.name}
+        </button>
+      </li>
+    ));
     return elements;
   }
 
