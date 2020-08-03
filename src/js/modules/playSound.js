@@ -1,8 +1,7 @@
 const playSound = (src) => {
-  const audio = document.createElement('audio');
-  audio.setAttribute('autoplay', 'true');
-  audio.innerHTML = `<source src="${src}" type="audio/mpeg">`;
-  document.body.appendChild(audio);
+  const sound = new Audio();
+  sound.src = src;
+  sound.play();
 };
 
 export default playSound;

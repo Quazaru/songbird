@@ -3,7 +3,7 @@ import 'normalize.css';
 import './app.scss';
 import React from 'react';
 
-import '../../libs/loudlinks.min.js';
+import playSound from '../../modules/playSound';
 
 import AppHeader from '../AppHeader/AppHeader.jsx';
 import LevelMap from '../LevelMap/LevelMap.jsx';
@@ -39,10 +39,12 @@ export default class App extends React.Component {
     });
     if (id - 1 === this.state.hiddenFieldIndex) {
       document.querySelector(selector).classList.add('pass');
+      playSound('../../../assets/sounds/agree.mp3');
       this.setState({ isWin: true });
       const points = 5 - document.querySelectorAll('.field-choice__item.failure').length;
       this.setState({ levelScore: points });
     } else {
+      playSound('../../../assets/sounds/failure.mp3');
       document.querySelector(selector).classList.add('failure');
     }
   }
@@ -75,6 +77,7 @@ export default class App extends React.Component {
   }
 
   restartHandler() {
+    playSound('../../../assets/sounds/restart.mp3');
     this.setState({
       totalScore: 0,
       currentLevel: 0,

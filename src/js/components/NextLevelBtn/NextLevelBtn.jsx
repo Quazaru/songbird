@@ -3,9 +3,7 @@ import './NextLevelBtn.scss';
 import playSound from '../../modules/playSound';
 
 const clickHandler = (src, callback) => {
-  const sound = new Audio();
-  sound.src = src;
-  sound.play();
+  playSound(src);
 
   callback();
 };
@@ -16,7 +14,7 @@ const NextLevelBtn = (props) => {
     <button
       type="button"
       className={`next-level-btn ${!isWin ? 'disabled' : ''}`}
-      onClick={() => (isWin ? clickHandler('../../../assets/sounds/sound.mp3', props.onClick)
+      onClick={() => (isWin ? clickHandler('../../../assets/sounds/nextLevel.mp3', props.onClick)
         : '')}
 
     >

@@ -22,6 +22,7 @@ const Perview = (props) => {
         <AudioPlayer
           className="field-card__audio"
           layout="horizontal-reverse"
+          autoPlayAfterSrcChange={false}
           src={audio}
           customControlsSection={
             [
