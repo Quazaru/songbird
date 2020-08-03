@@ -13,8 +13,8 @@ const Perview = (props) => {
     name = '  * * * *  ';
   }
   return (
-    <div className="field-card">
-      <div className="field-card__img">
+    <div className="field-card ">
+      <div className="field-card__img ">
         <img src={image} alt={name} />
       </div>
       <div className="field-card__body">

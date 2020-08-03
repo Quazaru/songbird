@@ -4,6 +4,7 @@ import './app.scss';
 import React from 'react';
 
 import playSound from '../../modules/playSound';
+import 'animate.css';
 
 import AppHeader from '../AppHeader/AppHeader.jsx';
 import LevelMap from '../LevelMap/LevelMap.jsx';
@@ -45,7 +46,7 @@ export default class App extends React.Component {
       this.setState({ levelScore: points });
     } else {
       playSound('../../../assets/sounds/failure.mp3');
-      document.querySelector(selector).classList.add('failure');
+      document.querySelector(selector).classList.add('failure', 'animate__animated', 'animate__headShake');
     }
   }
 
@@ -53,7 +54,7 @@ export default class App extends React.Component {
     this.calcScore();
     const nextLevel = this.state.currentLevel + 1;
     document.querySelectorAll('.field-choice__item').forEach((item) => {
-      item.classList.remove('pass', 'failure');
+      item.classList.remove('pass', 'failure', 'animate__animated', 'animate__headShake');
     });
     this.setState({
       currentLevel: nextLevel,
