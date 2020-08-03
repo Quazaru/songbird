@@ -20,6 +20,8 @@ const renderDescription = (data) => {
         <AudioPlayer
           className="field-card__audio"
           layout="horizontal-reverse"
+          autoPlay={false}
+          autoPlayAfterSrcChange={false}
           src={audio}
           customControlsSection={
             [

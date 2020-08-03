@@ -1,32 +1,37 @@
 import React from 'react';
 import './LevelMap.scss';
 
-const LevelMap = (props) => {
-  // const { levelNumber } = props;
-  // const levels = document.querySelectorAll('.level-map__item');
-  // levels[levelNumber].classList.add('active');
-  return (
-    <ul className='level-map'>
-      <li className='level-map__item active'>
-        <p>Тестовый раунд</p>
+const levels = [
+  'Тестовый раунд',
+  'Воробьиные',
+  'Лесные птицы',
+  'Певчие птицы',
+  'Хищные птицы',
+  'Морские птицы',
+];
+
+const renderLevels = (data, activeIndex) => {
+  const levelsList = data.map((item, idx) => {
+    if (idx == activeIndex) {
+      return (
+        <li className="level-map__item active" key={`${idx}-level`}>
+          <p>{item}</p>
+        </li>
+      );
+    }
+    return (
+      <li className="level-map__item" key={`${idx}-level`}>
+        <p>{item}</p>
       </li>
-      <li className='level-map__item'>
-        <p>Воробьиные</p>
-      </li>
-      <li className='level-map__item'>
-        <p>Лесные птицы</p>
-      </li>
-      <li className='level-map__item'>
-        <p>Певчие птицы</p>
-      </li>
-      <li className='level-map__item'>
-        <p>Хищные птицы</p>
-      </li>
-      <li className='level-map__item'>
-        <p>Морские птицы</p>
-      </li>
-    </ul>
-  )
-}
+    );
+  });
+  return levelsList;
+};
+
+const LevelMap = (props) => (
+  <ul className="level-map">
+    { renderLevels(levels, props.currentLevel) }
+  </ul>
+);
 
 export default LevelMap;

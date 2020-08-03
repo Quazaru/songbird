@@ -1,5 +1,4 @@
 import '../assets/css/normalize.css';
-import '../assets/css/variables.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

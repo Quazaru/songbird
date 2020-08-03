@@ -15,3 +15,8 @@
     background-color: darken($color: $main-breeze, $amount: 10%);
   }
 }
+.next-level-btn.disabled {
+  background-color: rgba(83, 83, 83, 0.61);
+  color: rgba(255, 255, 255, 0.479);
+  outline: none;
+}

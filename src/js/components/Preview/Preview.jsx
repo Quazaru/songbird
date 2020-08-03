@@ -9,8 +9,8 @@ const Perview = (props) => {
   let { image, name, audio } = data;
 
   if (hidden) {
-    image = '../../../assets/img/hidden.jpg';
-    name = ' ~ | ? | ~ ';
+    image = '../../../assets/img/hidden.png';
+    name = '  * * * *  ';
   }
   return (
     <div className="field-card">
@@ -30,6 +30,7 @@ const Perview = (props) => {
             ]
           }
         />
+        <p className="field-card__help">Прослушайте аудиозапись и определите по ней птицу</p>
       </div>
     </div>
   );
