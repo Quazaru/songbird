@@ -87,7 +87,7 @@ const birdsData = [
       name: 'Rust',
       species: 'action-adventure, симулятор выживания,шутер',
       description: 'Компьютерная игра в жанре симулятора выживания, была создана независимой британской студией Facepunch во главе которой, с 2014 года, стоит Гарри Ньюмэн. Игра вышла на платформах Microsoft Windows, macOS. Выпуск игры состоялся 8 февраля 2018 года.',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Rust_vector_logo.svg/274px-Rust_vector_logo.svg.png',
+      image: 'https://esportsjunkie.com/wp-content/uploads/2020/06/best-rust-server-hosting.jpeg',
       audio: 'assets/soundtracks/Rust.mp3',
     },
     {
