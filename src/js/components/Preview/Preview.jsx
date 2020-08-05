@@ -9,7 +9,7 @@ const Perview = (props) => {
   let { image, name, audio } = data;
 
   if (hidden) {
-    image = '../../../assets/img/hidden.png';
+    image = '../../../assets/img/hidden.svg';
     name = '  * * * *  ';
   }
   return (
@@ -23,7 +23,7 @@ const Perview = (props) => {
           className="field-card__audio"
           layout="horizontal-reverse"
           autoPlayAfterSrcChange={false}
-          src={audio}
+          src={`../../../${audio}`}
           customControlsSection={
             [
               RHAP_UI.MAIN_CONTROLS,

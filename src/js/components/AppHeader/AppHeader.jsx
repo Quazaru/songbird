@@ -3,7 +3,7 @@ import './AppHeader.scss';
 
 const AppHeader = (props) => (
   <header>
-    <p className="logo">Song<span>Bird</span></p>
+    <p className="logo">Sounds of<span> Gamer</span></p>
     <p>
       Score:
       <span className='important-counter'>{' ' + props.score}</span>

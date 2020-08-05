@@ -6,10 +6,11 @@
   list-style: none;
   padding-top: 0px;
   &__item {
+    color: rgba(255, 255, 255, 0.493);
     text-align: center;
-    width: calc(100% / 6);
+    width: calc(100% / 5);
     background-color: $disable-breeze;
-    padding: 10px;
+    padding: 5px;
     position: relative;
     &:last-child {
       border-radius: 0 8px 8px 0;
@@ -23,20 +24,22 @@
     }
     &.active {
       background-color: $sub-breeze;
+      color: #fff;
       &::after {
-        color: #fff;
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: -35px;
+        top: 50%;
+        z-index: 200;
+        vertical-align: 3px;
+        border-top: 25px solid $sub-breeze;
+        border-right: 24px solid transparent;
+        border-left: 24px solid transparent;
+        transform: translateY(-50%) rotate(-90deg) ;
       }
     }
-    &::after {
-      content: '\21D2';
-      color: rgba(255, 255, 255, 0.322);
-      position: absolute;
-      font-size: 25px;
-      right: -10px;
-      top: 50%;
-      transform: translateY(-55%);
-      z-index: 200;
-    }
+
 
   }
 }
@@ -56,8 +59,9 @@
         border-radius: 0;
   
       }
-      &::after {
+      &.active::after {
         content: '';
+        border: none;
       }
     }
   }

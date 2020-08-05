@@ -3,16 +3,16 @@ import './LevelMap.scss';
 
 const levels = [
   'Тестовый раунд',
-  'Воробьиные',
-  'Лесные птицы',
-  'Певчие птицы',
-  'Хищные птицы',
-  'Морские птицы',
+  'Survival',
+  'MMORPG',
+  'Shooter',
+  'Chill games',
+  'LEGENDS',
 ];
 
 const renderLevels = (data, activeIndex) => {
   const levelsList = data.map((item, idx) => {
-    if (idx == activeIndex) {
+    if (idx === activeIndex) {
       return (
         <li className="level-map__item active" key={`${idx}-level`}>
           <p>{item}</p>

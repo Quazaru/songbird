@@ -15,8 +15,11 @@ const restartHandler = (condition, handler) => {
     );
   }
   return (
-    <p>Вы набрали максимальное количество баллов! Можете похвастаться знакомым.</p>
-  )
+    <div className="congrats">
+      <p>Вы набрали максимальное количество баллов! Можете похвастаться знакомым.</p>
+      <img src="../../../assets/img/congrats.gif" alt="" srcSet="" />
+    </div>
+  );
 };
 
 const GameOverScreen = (props) => {

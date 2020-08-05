@@ -5,7 +5,8 @@
   vertical-align: top;
   margin-top: 10px;
   margin-left: 10px;
-  min-height: $sub-card-height;
+  height: $sub-card-height;
+  overflow: scroll;
 }
 
 

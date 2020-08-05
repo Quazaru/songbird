@@ -22,7 +22,7 @@ const renderDescription = (data) => {
           layout="horizontal-reverse"
           autoPlay={false}
           autoPlayAfterSrcChange={false}
-          src={audio}
+          src={`../../../${audio}`}
           customControlsSection={
             [
               RHAP_UI.MAIN_CONTROLS,
