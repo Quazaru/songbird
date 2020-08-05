@@ -105,7 +105,7 @@ export default class App extends React.Component {
           score={totalScore}
         />
         <LevelMap currentLevel={currentLevel} />
-        <Preview hidden={!isWin} data={hiddenField} />
+        <Preview hidden={!isWin} data={hiddenField} isWin={isWin} />
         <ChoicePanel
           fieldsList={levelFields}
           onClick={(id, selector) => this.chooseField(id, selector)}

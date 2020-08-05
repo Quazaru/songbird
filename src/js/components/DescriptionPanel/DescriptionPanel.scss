@@ -59,3 +59,13 @@
 
   }
 }
+@media screen and (max-width: 500px) {
+  .description-panel {
+    min-height: $sub-card-height;;
+    height: auto;
+    overflow: visible;
+  }
+  .field-card.description-panel .field-card__img {
+    width: 100%;
+  }
+}
