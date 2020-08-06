@@ -1,0 +1,71 @@
+@import '../../../assets/css/variables.scss';
+.description-panel {
+  width: calc(50% );
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: $sub-card-height;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $main-black;
+    
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+
+.field-card.description-panel {
+  .field-card__img {
+    display: inline-block;
+    width: 30%;
+    
+    margin-right: 20px;
+    img {
+      width: 100%;
+      border-radius: 10px;
+      height: 100px;
+      overflow: hidden;
+    }
+  }
+  .field-card__subtitle {
+    color: rgba(255, 255, 255, 0.671);
+    font-size: 14px;
+  }
+  .field-card__body {
+    margin-bottom: 20px;
+  }
+  .field-card__player {
+    margin-bottom: 10px;
+  }
+  .field-card__description {
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .description-panel {
+    margin: 0;
+    margin-top: 20px;
+    width: auto;
+    display: block;
+
+  }
+}
+@media screen and (max-width: 500px) {
+  .description-panel {
+    min-height: $sub-card-height;;
+    height: auto;
+    overflow: visible;
+  }
+  .field-card.description-panel .field-card__img {
+    width: 100%;
+  }
+}

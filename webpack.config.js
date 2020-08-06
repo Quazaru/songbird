@@ -116,7 +116,7 @@ module.exports = {
 
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
-      { from: 'assets/img/*', to: '' },
+      { from: 'assets/***/*', to: '' },
     ]),
     new MiniCssExtractPlugin({
       exclude: '/\.map$/',

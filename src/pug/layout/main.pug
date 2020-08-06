@@ -1,0 +1,18 @@
+block variables
+
+
+
+doctype html
+html(language=language)
+    head
+        meta(charset='UTF-8')
+        title #{title}
+        meta(name="description", content=description) 
+        <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+    body(class=pageClass || '')
+        #root
+            block content  
+        footer
+            include ../includes/modules/footer.pug
+        block script
