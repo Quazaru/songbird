@@ -13,6 +13,7 @@ class ChoicePanel extends React.Component {
 
   answersRender(array) {
     const elements = array.map((item) => {
+      if(item.isQuestion) return;
       const className = 'field-choice__item';
       const selector = `.${className}#answer-${item.id}`;
       return (
@@ -23,7 +24,7 @@ class ChoicePanel extends React.Component {
           onClick={() => this.props.onClick(item.id, selector)}
         >
           <button type="button">
-            {item.name}
+            {item.title}
           </button>
         </li>
       );

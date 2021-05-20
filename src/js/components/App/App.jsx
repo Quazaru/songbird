@@ -19,8 +19,9 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       currentLevel: 0,
-      maxLevel: 5,
-      hiddenFieldIndex: Math.floor(Math.random() * 5),
+      maxLevel: this.props.data.length,
+      hiddenFieldIndex:  this.props.data[0][0].correctAnswerId[0],
+      questionId: 0,
       selectedFieldIndex: false,
       gameOver: false,
       isWin: false,
@@ -35,17 +36,15 @@ export default class App extends React.Component {
 
   chooseField(id, selector) {
     this.setState(() => {
-      const newActiveField = id - 1;
+      const newActiveField = id ;
       return ({ selectedFieldIndex: newActiveField });
     });
-    if (id - 1 === this.state.hiddenFieldIndex) {
+    if (id === this.state.hiddenFieldIndex) {
       document.querySelector(selector).classList.add('pass');
-      playSound('../../../assets/sounds/agree.mp3');
       this.setState({ isWin: true });
-      const points = 5 - document.querySelectorAll('.field-choice__item.failure').length;
+      const points = 5 -  document.querySelectorAll('.field-choice__item.failure').length;
       this.setState({ levelScore: points });
     } else {
-      playSound('../../../assets/sounds/failure.mp3');
       document.querySelector(selector).classList.add('failure', 'animate__animated', 'animate__headShake');
     }
   }
@@ -56,18 +55,21 @@ export default class App extends React.Component {
     document.querySelectorAll('.field-choice__item').forEach((item) => {
       item.classList.remove('pass', 'failure', 'animate__animated', 'animate__headShake');
     });
+    if (nextLevel > this.state.maxLevel - 1) {
+      this.setState(({ gameOver }) => ({ gameOver: true }));
+      return;
+    }
     this.setState({
       currentLevel: nextLevel,
       gameOver: false,
       isWin: false,
-      hiddenFieldIndex: Math.floor(Math.random() * 5),
+      hiddenFieldIndex: this.props.data[nextLevel][0].correctAnswerId[0],
       levelScore: 5,
       selectedFieldIndex: false,
     });
-    if (nextLevel > this.state.maxLevel) {
-      this.setState(({ gameOver }) => ({ gameOver: true }));
-      return;
-    }
+    console.log(this.props.data[nextLevel][0]);
+    console.log(nextLevel + " - " + this.props.data.length);
+    
   }
 
   calcScore() {
@@ -84,7 +86,7 @@ export default class App extends React.Component {
       currentLevel: 0,
       gameOver: false,
       isWin: false,
-      hiddenFieldIndex: Math.floor(Math.random() * 5),
+      hiddenFieldIndex:  this.props.data[0][0].correctAnswerId[0],
       levelScore: 5,
       selectedFieldIndex: false,
     });
@@ -97,21 +99,19 @@ export default class App extends React.Component {
       currentLevel, hiddenFieldIndex, isWin, totalScore, selectedFieldIndex,
     } = this.state;
     const levelFields = data[currentLevel];
-    const hiddenField = levelFields[hiddenFieldIndex];
+    const hiddenField = levelFields[hiddenFieldIndex - 1];
     const activeField = levelFields[selectedFieldIndex];
     return (
       <div className="level">
         <AppHeader
           score={totalScore}
         />
-        <LevelMap currentLevel={currentLevel} />
         <Preview hidden={!isWin} data={hiddenField} isWin={isWin} />
         <ChoicePanel
           fieldsList={levelFields}
           onClick={(id, selector) => this.chooseField(id, selector)}
           onWin={() => { this.onWin(); }}
         />
-        <DescriptionPanel data={activeField} />
         <NextLevelBtn
           onClick={() => this.goNextLevel()}
           isWin={isWin}
@@ -122,7 +122,7 @@ export default class App extends React.Component {
 
   render() {
     const { gameOver, totalScore, isWin, maxLevel, levelScore } = this.state;
-    const maxScore = (maxLevel + 1) * levelScore;
+    const maxScore = (maxLevel ) * 5;
     if (!gameOver) {
       return (
         <div className="container">
